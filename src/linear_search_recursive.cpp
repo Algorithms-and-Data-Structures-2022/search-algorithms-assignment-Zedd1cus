@@ -11,7 +11,16 @@ namespace assignment {
     // Tips:
     // 1. Укажите случаи выхода из рекурсии: (а) обошли все элементы и (б) элемент найден.
     // 2. Вызовите рекурсивный метод с другим индексом.
+    int i = curr_index;
 
+    while (i > 0) {
+      if (arr[i] == search_elem) {
+        return i;
+      } else {
+        i -= 1;
+        return search(arr, search_elem, i);
+      }
+    }
     return std::nullopt;
   }
 
